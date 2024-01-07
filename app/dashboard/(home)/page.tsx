@@ -8,12 +8,12 @@ const DashBoardPage = () => {
   return (
     <>
       <main className="flex w-full flex-1 flex-grow">
-        <div className="flex  px-3 flex-col gap-y-8 flex-1 max-w-lg mx-auto pb-20">
+        <div className="flex ml-[10%] px-3 flex-col gap-y-8 flex-1 max-w-lg mx-auto pb-20">
           <Suspense fallback={<PostSkeleton />}>
             <PostList />
           </Suspense>
         </div>
-        <div className=" hidden 2xl:block fixed top-12 right-28 w-1/4">
+        <div className=" hidden xl:block fixed top-12  right-8 2xl:right-28 w-1/4">
           <div className=" ">
             <MainAccount title="Logout" />
           </div>
