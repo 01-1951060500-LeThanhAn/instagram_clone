@@ -2,7 +2,7 @@ import { fetchPostById, fetchPostByUsername } from "@/lib/data";
 import Link from "next/link";
 import PostsGrid from "./post-grid";
 
-async function MorePosts({ postId }: { postId: string }) {
+async function MorePosts({ postId }: { postId?: string }) {
   const post = await fetchPostById(postId);
   const postUsername = post?.user.username;
   const posts = await fetchPostByUsername(post?.user.id!, postId);

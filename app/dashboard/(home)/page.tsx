@@ -8,7 +8,7 @@ const DashBoardPage = () => {
   return (
     <>
       <main className="flex w-full flex-1 flex-grow">
-        <div className="flex ml-[10%] px-3 flex-col gap-y-8 flex-1 max-w-lg mx-auto pb-20">
+        <div className="flex 2xl:ml-[10%] mx-auto lg:mr-24 md:mx-auto 2xl:mr-0 px-3 flex-col gap-y-8 flex-1 max-w-lg pb-20">
           <Suspense fallback={<PostSkeleton />}>
             <PostList />
           </Suspense>

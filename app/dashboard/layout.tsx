@@ -20,7 +20,7 @@ export default function DashBoardLayout({
         <Sidebar />
       </div>
 
-      <div className="flex-grow mx-auto mt-12 lg:mr-48 md:mt-0 sm:p-6 md:p-12 max-w-7xl flex-1 w-full overflow-y-auto">
+      <div className="flex-grow mx-auto mt-12  md:mt-0 sm:p-6 md:p-12 max-w-7xl flex-1 w-full overflow-y-auto">
         {children}
       </div>
     </main>

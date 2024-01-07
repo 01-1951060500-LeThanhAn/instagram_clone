@@ -20,9 +20,7 @@ const PostActions: NextPage<PostActionsProps> = ({
 }) => {
   return (
     <>
-      <div
-        className={cn(`relative flex items-center w-full gap-x-2`, className)}
-      >
+      <div className={cn(`relative flex items-center w-full `, className)}>
         <div className="-mb-4">
           {" "}
           <LikeButton post={post} userId={userId as string} />

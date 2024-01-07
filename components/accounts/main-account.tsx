@@ -51,12 +51,12 @@ const MainAccount: NextPage<AccountProps> = ({
             />
           </Link>
           <div className="flex flex-col ml-3">
-            <span className="text-neutral-500 text-base">
+            <span className="text-neutral-500 text-sm">
               {session?.user.username === username
                 ? session?.user.username
                 : username}
             </span>
-            <p className="font-semibold text-lg">
+            <p className="font-semibold text-base">
               {session?.user.name === name ? session?.user.name : name}
             </p>
           </div>

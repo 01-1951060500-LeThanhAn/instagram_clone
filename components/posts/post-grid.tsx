@@ -12,7 +12,7 @@ function PostsGrid({ posts }: { posts: any[] | undefined }) {
   }
 
   return (
-    <div className="grid grid-cols-3 gap-0.5">
+    <div className="grid grid-cols-3 gap-5">
       {posts?.map((post) => (
         <Link
           href={`/dashboard/cmt/${post.id}`}
