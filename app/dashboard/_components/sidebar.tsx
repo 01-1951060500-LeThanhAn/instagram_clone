@@ -4,6 +4,8 @@ import ListNavLinks from "./list-navlink";
 import MoredropDown from "./more-dropdown";
 import { auth } from "@/auth/options";
 import Profile from "./profile";
+import { LogIn } from "lucide-react";
+import Link from "next/link";
 
 const Sidebar = async () => {
   const session = await auth();
@@ -21,7 +23,16 @@ const Sidebar = async () => {
           <Logo />
           <ListNavLinks />
 
-          {user && <Profile user={user} />}
+          {user ? (
+            <Profile user={user} />
+          ) : (
+            <>
+              <Link href={`/signin`} className="flex items-center px-5 mt-2">
+                <LogIn className="block" />
+                <p className="ml-2 hidden lg:block"> Log In</p>
+              </Link>
+            </>
+          )}
 
           <div className="hidden md:flex relative md:mt-auto flex-1 items-end w-full">
             <MoredropDown />

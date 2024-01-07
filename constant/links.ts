@@ -3,6 +3,7 @@ import {
   Compass,
   Heart,
   Home,
+  LogIn,
   MessageCircle,
   PlusSquare,
   Search,

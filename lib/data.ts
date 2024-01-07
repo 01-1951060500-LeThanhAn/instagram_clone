@@ -34,6 +34,54 @@ export async function fetchPosts() {
   }
 }
 
+export async function fetchAllUser() {
+  noStore();
+
+  try {
+    const users = await prisma.user.findMany({
+      include: {
+        posts: {
+          orderBy: {
+            createdAt: "desc",
+          },
+        },
+        saved: {
+          orderBy: {
+            createdAt: "desc",
+          },
+        },
+        followedBy: {
+          include: {
+            follower: {
+              include: {
+                followedBy: true,
+                following: true,
+              },
+            },
+          },
+        },
+        following: {
+          include: {
+            following: {
+              include: {
+                following: true,
+                followedBy: true,
+              },
+            },
+          },
+        },
+      },
+      orderBy: {
+        createdAt: "desc",
+      },
+    });
+
+    return users;
+  } catch (error) {
+    console.log(error);
+    throw new Error("Failed to fetch posts");
+  }
+}
 export async function fetchPostById(id: string | undefined) {
   noStore();
 
